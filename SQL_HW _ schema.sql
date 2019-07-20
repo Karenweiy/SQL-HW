@@ -6,9 +6,9 @@ DROP TABLE IF EXISTS salaries;
 DROP TABLE IF EXISTS titles;
 
 create table departments(
-    dept_no VARCHAR(10) NOT NULL,
+    dept_no VARCHAR(100) NOT NULL,
     dept_name VARCHAR(100) NOT NULL,
-	primary key(dept_no)
+    primary key(dept_no)
     );
 	
 create table dept_emp(
@@ -17,6 +17,7 @@ create table dept_emp(
 	from_date Date NOT NULL,
 	to_date Date NOT NULL
     );
+--comment: have error when creating foreign key of emp_no and dept_no, so drop those quiries
 	
 create table dept_manager(
     dept_no VARCHAR(1000000)NOT NULL,
@@ -24,6 +25,7 @@ create table dept_manager(
     from_date Date NOT NULL,
     to_date Date NOT NULL
     );
+--comment: have error when creating foreign key of emp_no and dept_no, so drop those quiries
 
 create table employees(
     emp_no Int NOT NULL,
@@ -32,6 +34,7 @@ create table employees(
     last_name VARCHAR(1000000)NOT NULL,
     gender VARCHAR(1000000)NOT NULL,
     hire_date Date NOT NULL
+    primary key(emp_no)
     );
 
 create table salaries(
@@ -40,6 +43,7 @@ create table salaries(
     from_date Date NOT NULL,
     to_date Date NOT NULL
     );
+--comment: have error when creating foreign key of emp_no, so drop that quiry
 
 create table titles(
     emp_no Int NOT NULL,
@@ -47,4 +51,4 @@ create table titles(
     from_date Date NOT NULL,
     to_date Date NOT NULL
     );  
-
+--comment: have error when creating foreign key of emp_no, so drop that quiry
